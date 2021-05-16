@@ -1,0 +1,16 @@
+name: skripsi
+root: ~/kondel/skripsi
+windows:
+  - dir: 
+    - z whatsapp-dashboard
+    - code .
+    - z whatsapp-selenium-integrator
+    - code .
+  - docker: 
+    - z container_state
+  - node-server: 
+    - z whatsapp-selenium-integrator 
+    - npm run start:watch
+  - node-frontend:
+    - z whatsapp-dashboard
+    - npm run start

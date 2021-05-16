@@ -1,0 +1,12 @@
+name: karirlab
+root: ~/kondel/external-works/karirlab
+windows:
+  - blog:
+    - cd karirlab-plain-blog
+    - code .
+    - npm run develop
+  - fe:
+    - cd karirlab-frontend
+    - code .
+    - npm run dev
+  - empty: []

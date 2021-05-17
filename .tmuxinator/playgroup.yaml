@@ -1,0 +1,7 @@
+name: playgroup
+windows:
+  - docker:
+      z container_state
+  - ansible:
+      z ansible
+  - ssh: []

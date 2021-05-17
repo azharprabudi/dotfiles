@@ -49,6 +49,8 @@ let g:airline_theme='twofirewatch'
 " NERDTree git status use NerdFonts
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let NERDTreeMapOpenInTab='\r'
+let NERDTreeShowHidden=1
+
 
 " Remap NERDTree
 nnoremap <C-n> :NERDTree<CR>

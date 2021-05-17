@@ -32,6 +32,9 @@ Plug 'Yggdroot/indentLine'
 " Automatically set 'shiftwidth' + 'expandtab' (indention) based on file type.
 Plug 'tpope/vim-sleuth'
 
+" CTRLp family
+Plug 'kien/ctrlp.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -46,14 +49,13 @@ let g:airline_theme='twofirewatch'
 " NERDTree git status use NerdFonts
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let NERDTreeMapOpenInTab='\r'
+let NERDTreeShowHidden=1
+
 
 " Remap NERDTree
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> <C-w>w
-
-" Remap CTRLSpace
-nnoremap <silent><C-p> :CtrlSpace O<CR>
 
 " Remap Goyo
 nnoremap <C-g> :Goyo<CR>
@@ -67,7 +69,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-" Font Configuration
+" Vim Configuration
 set hidden
 set encoding=utf8
 set conceallevel=1
@@ -99,3 +101,5 @@ set list lcs=tab:\|\
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 239
 
+" CTRLp conf
+let g:ctrlp_working_path_mode = 'c'

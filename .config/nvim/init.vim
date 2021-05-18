@@ -35,6 +35,9 @@ Plug 'tpope/vim-sleuth'
 " CTRLp family
 Plug 'kien/ctrlp.vim'
 
+" Vim polygot family
+Plug 'sheerun/vim-polyglot'
+
 " Initialize plugin system
 call plug#end()
 
@@ -50,7 +53,6 @@ let g:airline_theme='twofirewatch'
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let NERDTreeMapOpenInTab='\r'
 let NERDTreeShowHidden=1
-
 
 " Remap NERDTree
 nnoremap <C-n> :NERDTree<CR>

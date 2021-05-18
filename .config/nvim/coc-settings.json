@@ -13,7 +13,7 @@
     "typescriptreact"
   ],
   "typescript.suggest.enabled": true,
-  "prettier.semi": false,
+  "prettier.semi": true,
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,

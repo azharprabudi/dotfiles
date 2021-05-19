@@ -1,4 +1,4 @@
-name: playground
+name: playgroup
 windows:
   - docker:
       z container_state

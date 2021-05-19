@@ -1,7 +1,9 @@
 name: payfazz
+root: ~/
 windows:
   - vpn:
       - sudo openvpn ~/kondel/vpn/payfazz.ovpn
-  - ssh: []
-  - kubectl: []
-  - psql: []
+  - dir: {}
+  - ssh: {}
+  - kubectl: {}
+  - psql: {}

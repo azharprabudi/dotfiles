@@ -1,8 +1,8 @@
 name: warung-lebaran
-root: ~/kondel/external-works/hansel
+root: ~/kondel/external-works/hansel/dashboard
 windows:
   - npm:
-    - cd dashboard
     - code .
     - npm run start
-  - empty: []
+  - ssh:
+      - ssh root@128.199.75.253

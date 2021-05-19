@@ -9,4 +9,3 @@ windows:
     - cd karirlab-frontend
     - code .
     - npm run dev
-  - empty: []

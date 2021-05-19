@@ -38,6 +38,9 @@ Plug 'kien/ctrlp.vim'
 " Vim polygot family
 Plug 'sheerun/vim-polyglot'
 
+" Vim easygrep
+Plug 'brooth/far.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -105,3 +108,14 @@ let g:indentLine_color_term = 239
 
 " CTRLp conf
 let g:ctrlp_working_path_mode = 'c'
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

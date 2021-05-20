@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/azhar/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,15 +70,8 @@ export UPDATE_ZSH_DAYS=7
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(asdf ansible copyfile command-not-found git z docker docker-compose fzf tmuxinator tmux zsh_reload)
 
-if [ -d "$HOME/env" ]; then
-  for file in $(ls $HOME/env)
-  do
-    source "$HOME/env/$file";
-  done
-fi
-
 source $ZSH/oh-my-zsh.sh
-source $HOME/.gvm/scripts/gvm
+[ -f $HOME/.gvm/scripts ] && source $HOME/.gvm/scripts/gvm
 
 # User configuration
 alias vim=nvim

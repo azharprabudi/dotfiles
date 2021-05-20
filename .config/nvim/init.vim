@@ -41,6 +41,11 @@ Plug 'sheerun/vim-polyglot'
 " Vim easygrep
 Plug 'brooth/far.vim'
 
+" Vim closetag
+Plug 'alvan/vim-closetag'
+
+Plug 'google/vim-jsonnet'
+
 " Initialize plugin system
 call plug#end()
 
@@ -119,3 +124,12 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Vim autoclose tags
+let g:closetag_filetypes = 'html,jsx,tsx'
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

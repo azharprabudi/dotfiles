@@ -1,11 +1,17 @@
 name: karirlab
-root: ~/kondel/external-works/karirlab
+root: ~/kondel/karirlab
 windows:
   - blog:
     - cd karirlab-plain-blog
-    - code .
+    - npm install 
     - npm run develop
+  - blog-editor:
+    - cd karirlab-plain-blog
+    - vim .
   - fe:
     - cd karirlab-frontend
-    - code .
+    - npm install
     - npm run dev
+  - fe-editor:
+    - cd karirlab-frontend
+    - vim .

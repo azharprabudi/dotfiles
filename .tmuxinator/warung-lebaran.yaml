@@ -1,8 +1,10 @@
 name: warung-lebaran
-root: ~/kondel/external-works/hansel/dashboard
+root: ~/kondel/hansel/dashboard-hansel
 windows:
-  - npm:
-    - code .
+  - server:
+    - npm install
     - npm run start
+  - editor:
+    - vim .
   - ssh:
       - ssh root@128.199.75.253

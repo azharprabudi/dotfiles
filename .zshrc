@@ -68,7 +68,7 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf ansible copyfile command-not-found git z docker docker-compose fzf tmuxinator tmux zsh_reload)
+plugins=(copyfile command-not-found z fzf zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.gvm/scripts ] && source $HOME/.gvm/scripts/gvm
@@ -82,6 +82,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:${KR
 # User Apps Configuration
 export GOPATH=$HOME/go
 export KUBECONFIG=$HOME/.kube/config
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Kube-ps1
 source $HOME/kube-ps1.sh
@@ -102,5 +103,3 @@ if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path
 if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 if [ -f '$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
 
-# load homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

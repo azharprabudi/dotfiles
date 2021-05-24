@@ -77,7 +77,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 export EDITOR=nvim
 export ZSH_THEME=$ZSH_THEME
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/google-cloud-sdk/bin
 
 # User Apps Configuration
 export GOPATH=$HOME/go

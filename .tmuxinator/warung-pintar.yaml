@@ -1,0 +1,5 @@
+name: warung-pintar
+root: ~/kondel/warung-pintar
+windows:
+  - editor: []
+  - kubectl: []

@@ -81,6 +81,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:${KR
 
 # User Apps Configuration
 export GOPATH=$HOME/go
+export GO111MODULE=on
 export KUBECONFIG=$HOME/.kube/config
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 

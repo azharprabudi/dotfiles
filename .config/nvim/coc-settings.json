@@ -18,6 +18,12 @@
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
-  "prettier.arrowParens": "avoid"
+  "prettier.arrowParens": "avoid",
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": ["go"]
+    }
+  }
 }
 

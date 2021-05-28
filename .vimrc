@@ -52,7 +52,10 @@ Plug 'brooth/far.vim'
 " Vim closetag
 Plug 'alvan/vim-closetag'
 
+" Vim language
 Plug 'google/vim-jsonnet'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 " Initialize plugin system
 call plug#end()

@@ -55,7 +55,7 @@ Plug 'alvan/vim-closetag'
 " Vim language
 Plug 'google/vim-jsonnet'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'hashivim/vim-terraform'
 
 " Initialize plugin system
 call plug#end()

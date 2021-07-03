@@ -24,6 +24,11 @@
       "command": "gopls",
       "filetypes": ["go"],
       "rootPatterns": ["go.mod"],
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
     }
   }
 }

@@ -27,8 +27,13 @@
     },
     "terraform": {
       "command": "terraform-ls",
-      "filetypes": ["terraform"],
-      "initializationOptions": {}
+      "args": ["serve"],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
     }
   }
 }

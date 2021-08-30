@@ -77,7 +77,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 export EDITOR=nvim
 export ZSH_THEME=$ZSH_THEME
-export PATH=$PATH:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/google-cloud-sdk/bin
+export PATH=$PATH:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/google-cloud-sdk/bin:$HOME/go/bin
 
 # User Apps Configuration
 export KUBECONFIG=$HOME/.kube/config
@@ -89,9 +89,11 @@ PROMPT='$(kube_ps1)'$PROMPT
 
 # NVM Installation
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Base fzf
+export FZF_BASE=$HOME/.fzf.zsh
 
 
 # The next line updates PATH for the Google Cloud SDK.

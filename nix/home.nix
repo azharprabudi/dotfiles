@@ -59,6 +59,10 @@
       OPENAI_API_KEY = "xxxxx";
     };
 
+    shellAliases = {
+      lg = "lazygit";
+    };
+
     file = {
       # dotfiles
       ".curlrc" = {

@@ -1,7 +1,0 @@
-name: pintu
-root: ~/kondel/pintu
-windows:
-  - vpn:
-      - sudo tailscale up
-  - editor: {}
-  - kubectl: {}

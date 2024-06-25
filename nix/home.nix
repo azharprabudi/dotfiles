@@ -35,6 +35,7 @@
       ansible
       ansible-lint
       molecule
+      kail
       kubectl
       kubectx
       kubent

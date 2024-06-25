@@ -54,12 +54,12 @@
     };
 
     # Security hardening
-    loginWindow = {
+    loginwindow = {
       GuestEnabled = false;
     };
     
     alf = {
-      stealthenabled = true;
+      stealthenabled = 1;
     };
   };
 

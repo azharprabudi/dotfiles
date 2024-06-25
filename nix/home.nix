@@ -52,6 +52,7 @@
       mongosh
       postgresql_16
       mysql84
+      devcontainer
     ];
 
     sessionVariables = {

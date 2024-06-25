@@ -52,6 +52,15 @@
       "com.apple.trackpad.forceClick" = true;
       "com.apple.swipescrolldirection" = false;
     };
+
+    # Security hardening
+    loginWindow = {
+      GuestEnabled = false;
+    };
+    
+    alf = {
+      stealthenabled = true;
+    };
   };
 
   time = {

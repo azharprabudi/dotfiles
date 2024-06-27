@@ -1,5 +1,41 @@
 { pkgs, config, ... }:
- 
+let
+
+  treesitterWithGrammars = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+    p.bash
+    p.comment
+    p.cmake
+    p.cue
+    p.dockerfile
+    p.git_config
+    p.gitattributes
+    p.gitignore
+    p.go
+    p.gomod
+    p.gosum
+    p.gowork
+    p.gotmpl
+    p.hcl
+    p.helm
+    p.jq
+    p.json
+    p.json5
+    p.lua
+    p.make
+    p.markdown
+    p.nix
+    p.python
+    p.solidity
+    p.terraform
+    p.toml
+    p.yaml
+  ]));
+
+  treesitter-parsers = pkgs.symlinkJoin {
+    name = "treesitter-parsers";
+    paths = treesitterWithGrammars.dependencies;
+  };
+in
 {
 
   home = {
@@ -11,6 +47,7 @@
       hey
       curl
       lazygit
+      docker
       devenv
       neofetch
       coreutils
@@ -29,6 +66,7 @@
       go-swagger
       govulncheck
       golangci-lint
+      luajitPackages.luarocks
 
       kn
       func
@@ -80,6 +118,18 @@
         recursive = true;
       };
 
+      "./.config/nvim/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/nvim";
+        recursive = true;
+      };
+
+      # Treesitter is configured as a locally developed module in lazy.nvim
+      # we hardcode a symlink here so that we can refer to it in our lazy config
+      "./.local/share/nvim/nix/nvim-treesitter/" = {
+        recursive = true;
+        source = treesitterWithGrammars;
+      };
+
       # dotfile folders dependencies
       ".config/zsh/.p10k.zsh" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/zsh/.p10k.zsh";
@@ -128,15 +178,20 @@
 
     neovim = {
       enable = true;
-      defaultEditor = true;
       viAlias = true;
       vimAlias = true;
-      vimdiffAlias = true;
       withNodeJs = true;
+      vimdiffAlias = true;
+      defaultEditor = true;
+      package = pkgs.neovim-unwrapped;
 
       coc = {
-        enable = true;
+        enable = false;
       };
+
+      plugins = [
+        treesitterWithGrammars
+      ];
     };
 
     zsh = {

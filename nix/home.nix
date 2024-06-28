@@ -45,6 +45,7 @@ in
       jq
       yq
       hey
+      meld
       curl
       lazygit
       docker
@@ -52,11 +53,13 @@ in
       neofetch
       coreutils
       kafkactl
+      kustomize
       inetutils
       chatgpt-cli
       unixtools.watch
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
+      python3
       nodejs_22
       go_1_21
       gosec
@@ -101,42 +104,52 @@ in
 
     shellAliases = {
       lg = "lazygit";
+      meld = "meld_script(){ /Applications/Meld.app/Contents/MacOS/Meld $* 2>/dev/null & };meld_script";
     };
 
     file = {
       # dotfiles
       ".curlrc" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/.curlrc";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.curlrc";
       };
 
       ".editorconfig" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/.editorconfig";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.editorconfig";
+      };
+
+      ".config/nvim/init.lua" = {
+        text = ''
+          require("config.remap")
+          require("config.options")
+          require("config.lazy")
+          vim.opt.runtimepath:append("${treesitter-parsers}")
+        '';
       };
 
       ".config/wezterm" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/wezterm";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/wezterm";
         recursive = true;
       };
 
-      "./.config/nvim/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/nvim";
+      ".config/nvim/lua" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim/lua";
         recursive = true;
       };
 
       # Treesitter is configured as a locally developed module in lazy.nvim
       # we hardcode a symlink here so that we can refer to it in our lazy config
-      "./.local/share/nvim/nix/nvim-treesitter/" = {
+      ".local/share/nvim/nix/nvim-treesitter/" = {
         recursive = true;
         source = treesitterWithGrammars;
       };
 
       # dotfile folders dependencies
       ".config/zsh/.p10k.zsh" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/zsh/.p10k.zsh";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/zsh/.p10k.zsh";
       };
 
       "images" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mmos/dotfiles/images";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/images";
         recursive = true;
       };
     };

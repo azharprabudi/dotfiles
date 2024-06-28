@@ -97,6 +97,10 @@ in
       devcontainer
     ];
 
+    sessionPath = [
+      "$HOME/go/bin"
+    ];
+
     sessionVariables = {
       # TODO: Change to Chat GPT Open API Key
       OPENAI_API_KEY = "xxxxx";
@@ -156,7 +160,7 @@ in
   };
   
 
-  programs = {
+  programs = {    
     fd = {
       enable = true;
       hidden = true;

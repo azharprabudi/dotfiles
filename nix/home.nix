@@ -92,6 +92,7 @@ in
       kubeseal
       redis
       mongosh
+      sqlite
       postgresql_16
       mysql84
       devcontainer
@@ -108,6 +109,7 @@ in
 
     shellAliases = {
       lg = "lazygit";
+      ipext="curl https://icanhazip.com";
       meld = "meld_script(){ /Applications/Meld.app/Contents/MacOS/Meld $* 2>/dev/null & };meld_script";
     };
 

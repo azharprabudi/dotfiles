@@ -49,6 +49,7 @@ in
       curl
       lazygit
       docker
+      docker-compose
       devenv
       neofetch
       coreutils

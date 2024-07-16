@@ -57,6 +57,7 @@ in
       kustomize
       inetutils
       chatgpt-cli
+      jsonnet
       unixtools.watch
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 

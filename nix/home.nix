@@ -81,6 +81,7 @@ in
       ansible-lint
       molecule
       kail
+      kind
       kubectl
       kubectx
       kubent

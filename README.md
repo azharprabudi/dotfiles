@@ -7,6 +7,7 @@ A set of configuration files for my laptop written with flake nix.
 1. [Install nix](https://github.com/DeterminateSystems/nix-installer)
 2. [Install brew](https://brew.sh/)
 3. [Getting started with nix](https://zero-to-nix.com/concepts)
+4. [Install meld](https://gist.github.com/syneart/4a8724cd479d31f0f742f499f807dcb2)
 
 # Setup
 
@@ -26,3 +27,5 @@ A set of configuration files for my laptop written with flake nix.
 2. Nix config already exists
 
     Remove the `/etc/nix/nix.conf` or rename it to be `/etc/nix/nix.conf.before-nix-darwin`
+
+3. There are several Darwin configurations that cannot work and must be configured manually (e.g. dock icon size, click right, etc)

@@ -27,5 +27,3 @@ A set of configuration files for my laptop written with flake nix.
 2. Nix config already exists
 
     Remove the `/etc/nix/nix.conf` or rename it to be `/etc/nix/nix.conf.before-nix-darwin`
-
-3. There are several Darwin configurations that cannot work and must be configured manually (e.g. dock icon size, click right, etc)

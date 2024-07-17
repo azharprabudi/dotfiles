@@ -20,17 +20,20 @@
   system.defaults = {
     # minimal dock
     dock = {
-      tilesize = 64;
+      tilesize = 32;
       autohide = true;
       show-recents = false;
       persistent-apps = [
         "/Applications/DBeaver.app"
+        "/Applications/Docker.app"
+        "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Google\ Chrome.app"
         "/Applications/WezTerm.app"
         "/Applications/Wireshark.app"
+        "/Applications/VirtualBox.app"
       ];
       persistent-others = [
-        "~/kondel"
+        "~/Downloads"
       ];
     };
 

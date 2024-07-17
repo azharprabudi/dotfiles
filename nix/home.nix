@@ -109,6 +109,7 @@ in
     sessionVariables = {
       # TODO: Change to Chat GPT Open API Key
       OPENAI_API_KEY = "xxxxx";
+      KUBECTL_EXTERNAL_DIFF = "meld";
     };
 
     shellAliases = {

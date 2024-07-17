@@ -20,20 +20,22 @@
   system.defaults = {
     # minimal dock
     dock = {
+      tilesize = 64;
       autohide = true;
       show-recents = false;
       persistent-apps = [
         "/Applications/DBeaver.app"
         "/Applications/Google\ Chrome.app"
-        "/Applications/Slack.app"
-        "/Applications/Spotify.app"
         "/Applications/WezTerm.app"
         "/Applications/Wireshark.app"
-        "/Applications/zoom.us.app"
       ];
       persistent-others = [
         "~/kondel"
       ];
+    };
+
+    trackpad = {
+      Clicking = true;
     };
 
     # a finder that tells me what I want to know and lets me work

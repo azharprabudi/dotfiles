@@ -40,7 +40,7 @@ in
 
   home = {
     stateVersion = "24.05";
-    
+
     packages = with pkgs; [
       jq
       yq
@@ -62,6 +62,7 @@ in
       unixtools.watch
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
+      argocd
       python3
       nodejs_22
       go_1_21
@@ -73,6 +74,7 @@ in
       govulncheck
       golangci-lint
       luajitPackages.luarocks
+      ssm-session-manager-plugin
 
       kn
       func
@@ -80,6 +82,7 @@ in
       ansible-lint
       molecule
       kail
+      kind
       kubectl
       kubectx
       kubent
@@ -109,6 +112,7 @@ in
     sessionVariables = {
       # TODO: Change to Chat GPT Open API Key
       OPENAI_API_KEY = "xxxxx";
+      KUBECTL_EXTERNAL_DIFF = "meld";
     };
 
     shellAliases = {
@@ -164,9 +168,9 @@ in
       };
     };
   };
-  
 
-  programs = {    
+
+  programs = {
     fd = {
       enable = true;
       hidden = true;
@@ -238,9 +242,10 @@ in
       ];
 
       initExtra = ''
-        # Powerlevel10k Zsh theme  
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme  
-        test -f ~/.config/zsh/.p10k.zsh && source ~/.config/zsh/.p10k.zsh  
+        # Powerlevel10k Zsh theme
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        test -f ~/.config/zsh/.p10k.zsh && source ~/.config/zsh/.p10k.zsh
+        eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
 
       oh-my-zsh = {
@@ -249,12 +254,12 @@ in
         plugins = [
           "ansible"
           "aws"
-          "colorize" 
+          "colorize"
           "docker"
           "docker-compose"
           "encode64"
           "fzf"
-          "git" 
+          "git"
           "git"
           "history"
           "jsontools"

@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
- 
+
 {
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon = {
     enable = true;
   };
-  
+
   nix = {
     extraOptions = ''
       auto-optimise-store = true
@@ -13,27 +13,32 @@
       extra-platforms = x86_64-darwin aarch64-darwin
     '';
   };
-  
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
   system.defaults = {
     # minimal dock
     dock = {
+      tilesize = 32;
       autohide = true;
       show-recents = false;
       persistent-apps = [
         "/Applications/DBeaver.app"
+        "/Applications/Docker.app"
+        "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Google\ Chrome.app"
-        "/Applications/Slack.app"
-        "/Applications/Spotify.app"
         "/Applications/WezTerm.app"
         "/Applications/Wireshark.app"
-        "/Applications/zoom.us.app"
+        "/Applications/VirtualBox.app"
       ];
       persistent-others = [
-        "~/kondel"
+        "~/Downloads"
       ];
+    };
+
+    trackpad = {
+      Clicking = true;
     };
 
     # a finder that tells me what I want to know and lets me work
@@ -57,7 +62,7 @@
     loginwindow = {
       GuestEnabled = false;
     };
-    
+
     alf = {
       stealthenabled = 1;
     };
@@ -70,36 +75,29 @@
   fonts.packages = with pkgs; [
     nerdfonts
     meslo-lg
+    meslo-lgs-nf
   ];
-  
+
   homebrew = {
     enable = true;
 
     # TODO: Enable it for clean laptop
-    # casks = [
-      # "capcut"
-      # "cloudflare-warp"
-      # "dbeaver-community"
-      # "discord"
-      # "docker"
-      # "dockx"
-      # "google-chrome"
-      # "kindle-comic-creator"
-      # "kindle-comic-converter"
-      # "lofi"
-      # "notion"
-      # "openvpn-connect"
-      # "postman"
-      # "pritunl"
-      # "raycast"
-      # "rectangle"
-      # "slack"
-      # "transfer"
-      # "virtualbox@beta"
-      # "visual-studio-code"
-      # "wireshark"
-      # "wezterm"
-      # "zoom"
-    # ];
+    casks = [
+      "capcut"
+      "cloudflare-warp"
+      "dbeaver-community"
+      "docker"
+      "dockx"
+      "kindle-comic-creator"
+      "kindle-comic-converter"
+      "raycast"
+      "rectangle"
+      "transfer"
+      "virtualbox@beta"
+      "visual-studio-code"
+      "wireshark"
+      "wezterm"
+      "mullvadvpn"
+   ];
   };
 }

@@ -19,7 +19,7 @@
     darwinConfigurations = let
       inherit (inputs.nix-darwin.lib) darwinSystem;
     in {
-      NB-AzharP-Tech = darwinSystem {
+      AP00149-MP = darwinSystem {
         system = "aarch64-darwin";
  
         specialArgs = { inherit inputs; };
@@ -28,6 +28,7 @@
           ./nix/configuration.nix
           home-manager.darwinModules.home-manager
           {
+
             nixpkgs = nixpkgsConfig;
 
             home-manager.useGlobalPkgs = true;

@@ -45,6 +45,7 @@ in
       jq
       yq
       hey
+      krew
       meld
       curl
       lazygit
@@ -105,6 +106,7 @@ in
 
     sessionPath = [
       "$HOME/go/bin"
+      "$HOME/.krew/bin"
     ];
 
     sessionVariables = {

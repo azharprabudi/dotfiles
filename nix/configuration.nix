@@ -98,6 +98,7 @@
       "wireshark"
       "wezterm"
       "mullvadvpn"
+      "netbirdio/tap/netbird-ui"
    ];
   };
 }

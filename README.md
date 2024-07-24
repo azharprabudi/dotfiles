@@ -17,6 +17,15 @@ A set of configuration files for my laptop written with flake nix.
     ```
     nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .
     ```
+3. Manually install some binaries
+
+    ```
+    # installing kubectl-slice
+    krew install slice
+
+    # installing skm
+    go install github.com/TimothyYe/skm/cmd/skm@latest          
+    ```
 
 # Issues
 

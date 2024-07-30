@@ -102,6 +102,7 @@ in
       postgresql_16
       mysql84
       devcontainer
+      cue
     ];
 
     sessionPath = [

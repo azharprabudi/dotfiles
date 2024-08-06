@@ -103,6 +103,7 @@ in
       mysql84
       devcontainer
       cue
+      terragrunt
     ];
 
     sessionPath = [

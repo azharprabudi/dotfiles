@@ -104,6 +104,8 @@ in
       devcontainer
       cue
       terragrunt
+      natscli
+      nsc
     ];
 
     sessionPath = [

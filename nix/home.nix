@@ -106,6 +106,7 @@ in
       terragrunt
       natscli
       nsc
+      k6
     ];
 
     sessionPath = [

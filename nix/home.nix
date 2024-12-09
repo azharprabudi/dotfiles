@@ -205,6 +205,8 @@ in
         init = {
           defaultBranch = "main";
         };
+
+        credential.helper = "netrc";
       };
     };
 

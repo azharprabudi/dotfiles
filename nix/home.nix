@@ -107,6 +107,7 @@ in
       natscli
       nsc
       k6
+      mkdocs
     ];
 
     sessionPath = [

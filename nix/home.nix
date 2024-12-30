@@ -108,6 +108,7 @@ in
       nsc
       k6
       mkdocs
+      sysbench
     ];
 
     sessionPath = [

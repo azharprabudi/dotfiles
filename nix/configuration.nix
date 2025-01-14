@@ -91,6 +91,10 @@
   homebrew = {
     enable = true;
 
+    brews = [
+      "cf2tf"
+    ];
+
     # TODO: Enable it for clean laptop
     casks = [
       "capcut"

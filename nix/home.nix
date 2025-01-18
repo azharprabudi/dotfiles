@@ -109,6 +109,7 @@ in
       k6
       mkdocs
       sysbench
+      operator-sdk
     ];
 
     sessionPath = [

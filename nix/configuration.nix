@@ -91,8 +91,13 @@
   homebrew = {
     enable = true;
 
+    taps = [
+      "aws/tap"
+    ];
+
     brews = [
       "cf2tf"
+      "ec2-instance-selector"
     ];
 
     # TODO: Enable it for clean laptop

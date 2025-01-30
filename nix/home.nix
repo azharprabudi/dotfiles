@@ -110,6 +110,7 @@ in
       mkdocs
       sysbench
       operator-sdk
+      httpstat
     ];
 
     sessionPath = [

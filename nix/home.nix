@@ -111,6 +111,8 @@ in
       sysbench
       operator-sdk
       httpstat
+      confluent-platform
+      grpcurl
     ];
 
     sessionPath = [

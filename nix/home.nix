@@ -63,7 +63,10 @@ in
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       argocd
-      python3
+      (python3.withPackages (pythonPackages: with pythonPackages; [
+        boto3
+        botocore
+      ]))
       nodejs_22
       go_1_21
       gosec

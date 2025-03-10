@@ -116,6 +116,7 @@ in
       httpstat
       confluent-platform
       grpcurl
+      fluxcd
     ];
 
     sessionPath = [

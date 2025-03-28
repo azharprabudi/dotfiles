@@ -39,7 +39,7 @@ in
 {
 
   home = {
-    stateVersion = "24.05";
+    stateVersion = "24.11";
 
     packages = with pkgs; [
       jq
@@ -68,7 +68,7 @@ in
         botocore
       ]))
       nodejs_22
-      go_1_21
+      go_1_22
       gosec
       go-rice
       go-tools
@@ -117,6 +117,7 @@ in
       confluent-platform
       grpcurl
       fluxcd
+      mockgen
     ];
 
     sessionPath = [

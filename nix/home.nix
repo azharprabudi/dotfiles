@@ -80,6 +80,7 @@ in
       ssm-session-manager-plugin
 
       kn
+      yarn
       func
       ansible
       ansible-lint

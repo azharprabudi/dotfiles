@@ -119,6 +119,7 @@ in
       grpcurl
       fluxcd
       mockgen
+      eks-node-viewer
     ];
 
     sessionPath = [

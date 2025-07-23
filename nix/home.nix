@@ -120,6 +120,9 @@ in
       fluxcd
       mockgen
       eks-node-viewer
+      anchor
+      solana-cli
+      rustup
     ];
 
     sessionPath = [

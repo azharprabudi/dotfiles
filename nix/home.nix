@@ -51,6 +51,7 @@ in
       lazygit
       docker
       docker-compose
+      git-crypt
       devenv
       neofetch
       coreutils

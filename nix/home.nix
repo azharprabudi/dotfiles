@@ -60,6 +60,9 @@ in
       chatgpt-cli
       jsonnet
       unixtools.watch
+      sentry-cli
+      cfssl
+      mkcert
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       argocd

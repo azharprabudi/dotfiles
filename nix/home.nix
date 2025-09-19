@@ -39,7 +39,7 @@ in
 {
 
   home = {
-    stateVersion = "24.11";
+    stateVersion = "25.05";
 
     packages = with pkgs; [
       jq
@@ -51,6 +51,7 @@ in
       lazygit
       docker
       docker-compose
+      git-crypt
       devenv
       neofetch
       coreutils
@@ -71,7 +72,7 @@ in
         botocore
       ]))
       nodejs_22
-      go_1_22
+      go_1_23
       gosec
       go-rice
       go-tools
@@ -81,6 +82,7 @@ in
       golangci-lint
       luajitPackages.luarocks
       ssm-session-manager-plugin
+      claude-code
 
       kn
       yarn
@@ -267,7 +269,7 @@ in
         }
       ];
 
-      initExtra = ''
+      initContent = ''
         # Powerlevel10k Zsh theme
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         test -f ~/.config/zsh/.p10k.zsh && source ~/.config/zsh/.p10k.zsh

@@ -83,7 +83,7 @@
   };
 
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.symbols-only
     meslo-lg
     meslo-lgs-nf
   ];

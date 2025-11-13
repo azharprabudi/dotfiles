@@ -128,6 +128,7 @@ in
       anchor
       solana-cli
       rustup
+      cmctl
     ];
 
     sessionPath = [

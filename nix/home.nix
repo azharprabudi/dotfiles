@@ -129,6 +129,7 @@ in
       solana-cli
       rustup
       cmctl
+      pomerium-cli
     ];
 
     sessionPath = [

@@ -130,6 +130,8 @@ in
       rustup
       cmctl
       pomerium-cli
+      teleport
+      boundary
     ];
 
     sessionPath = [

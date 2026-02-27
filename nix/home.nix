@@ -71,7 +71,7 @@ in
         boto3
         botocore
       ]))
-      nodejs_22
+      nodejs_24
       go_1_23
       gosec
       go-rice

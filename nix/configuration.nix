@@ -91,6 +91,8 @@
 
     brews = [
       "cf2tf"
+      "helm"
+      "kustomize"
       "ec2-instance-selector"
     ];
 

@@ -56,7 +56,6 @@ in
       neofetch
       coreutils
       kafkactl
-      kustomize
       inetutils
       chatgpt-cli
       jsonnet
@@ -97,7 +96,6 @@ in
       kubent
       kube-score
       kubectl-neat
-      kubernetes-helm
       terraform
       terraform-docs
       tflint

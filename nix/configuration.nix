@@ -2,11 +2,8 @@
 
 {
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon = {
-    enable = true;
-  };
-
   nix = {
+    enable = false;
     extraOptions = ''
       auto-optimise-store = true
       extra-experimental-features = nix-command flakes
@@ -27,6 +24,7 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+  system.primaryUser = "azharprabudi";
   system.defaults = {
     # minimal dock
     dock = {
@@ -72,10 +70,6 @@
     loginwindow = {
       GuestEnabled = false;
     };
-
-    alf = {
-      stealthenabled = 1;
-    };
   };
 
   time = {
@@ -102,7 +96,6 @@
 
     # TODO: Enable it for clean laptop
     casks = [
-      "capcut"
       "cloudflare-warp"
       "dbeaver-community"
       "docker"
@@ -118,6 +111,6 @@
       "wezterm"
       "mullvadvpn"
       "netbirdio/tap/netbird-ui"
-   ];
+    ];
   };
 }

@@ -72,7 +72,7 @@ in
         botocore
       ]))
       nodejs_24
-      go_1_23
+      go_1_24
       gosec
       go-rice
       go-tools
@@ -214,7 +214,6 @@ in
     htop.enable = true;
     awscli.enable = true;
     direnv.enable = true;
-    thefuck.enable = true;
     dircolors.enable = true;
     home-manager.enable = true;
 
@@ -223,10 +222,10 @@ in
 
     git = {
       enable = true;
-      userName = "azharprabudi";
-      userEmail = "azharprabui@gmail.com";
+      settings.user.name = "azharprabudi";
+      settings.user.email = "azharprabui@gmail.com";
 
-      extraConfig = {
+      settings.extraConfig = {
         init = {
           defaultBranch = "main";
         };
@@ -255,7 +254,13 @@ in
 
     zsh = {
       enable = true;
-      dotDir = ".config/zsh";
+      dotDir = "${config.xdg.configHome}/zsh";
+
+      history = {
+        path = "${config.home.homeDirectory}/.zsh_history";
+        size = 10000;
+        save = 10000;
+      };
 
       autosuggestion = {
         enable = true;
@@ -280,6 +285,10 @@ in
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
 
+      envExtra = ''
+        export PATH="$HOME/go/bin:$HOME/.krew/bin:$PATH"
+      '';
+
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
@@ -299,7 +308,6 @@ in
           "systemadmin"
           "terraform"
           "z"
-          "thefuck"
         ];
       };
     };
